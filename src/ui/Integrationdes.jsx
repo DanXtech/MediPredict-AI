@@ -34,7 +34,7 @@ const Integrationdes = () => {
                     data-aos-delay="300"
                    >
                    <Check className='w-6 p-1 text-white font-bold bg-[#1C274C] rounded-[5px] shadow-lg'/>
-                     <span className='text-black text-xl '>{item.title}</span>
+                     <span className='text-black lg:text-xl '>{item.title}</span>
                    </li>
                   
                  </ul>
