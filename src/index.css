@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&display=swap');
+@import "tailwindcss";
+
+body{
+    background-color: white;
+} 
+
+
+.custom-pagination .swiper-pagination-bullet {
+    width: 12px; /* Equivalent to w-3 */
+    height: 12px; /* Equivalent to h-3 */
+    background-color: rgba(255, 255, 255, 0.4); /* Equivalent to bg-white/40 */
+    border-radius: 50%; /* Equivalent to rounded-full */
+    transition: all 0.3s ease; /* Equivalent to transition-all duration-300 */
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+    background-color: white; /* Equivalent to bg-white */
+    width: 16px; /* Equivalent to w-4 */
+    height: 16px; /* Equivalent to h-4 */
+}
+
+.custom-pagination .swiper-pagination-bullet:hover {
+    background-color: white; /* Equivalent to bg-white */
+    opacity: 0.8; /* Equivalent to opacity-80 */
+    transform: scale(1.1); /* Equivalent to scale-110 */
+}
