@@ -96,27 +96,26 @@ const Header = () => {
             className="md:hidden z-50"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24}  /> : <Menu size={24} className={`${isScrolled ? "text-gray-600 cursor-pointer " : "text-white "}`} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`md:hidden fixed inset-0 bg-white transition-transform duration-300 ease-in-out ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      } z-40`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 ">
-          {navItems.map((item) => (
-            <button
-              key={item.sectionId}
-              onClick={() => handleNavClick(item.sectionId)}
-              className="text-xl text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
-            >
-              {item.NavName}
-            </button>
-          ))}
-        </div>
-      </div>
+<div className={`md:hidden fixed inset-0 bg-white transition-transform duration-300 ease-in-out ${
+  isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+} z-40 h-screen flex flex-col items-center justify-center space-y-8`}>
+  {navItems.map((item) => (
+    <button
+      key={item.sectionId}
+      onClick={() => handleNavClick(item.sectionId)}
+      className="text-xl text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+    >
+      {item.NavName}
+    </button>
+  ))}
+</div>
+
     </header>
   );
 };
