@@ -18,7 +18,7 @@ const Integrationdes = () => {
             <div className='flex-1'
             
             >
-              <h3 className='text-2xl lg:text-3xl pb-3'
+              <h3 className='text-2xl lg:text-3xl pb-3 font-bold'
                data-aos="fade-up"
                data-aos-delay="300"
               >Seamless FHIR Integration</h3>
