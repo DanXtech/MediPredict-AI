@@ -1,23 +1,19 @@
-import {createBrowserRouter} from "react-router-dom"
-import Home from "../Pages/Home"
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import Home from "../Pages/Home";
 import RegistrationForm from "../Pages/RegistrationForm";
+import Dashboard from "../Pages/Dashboard";
 
-const router = createBrowserRouter ([
-{
+const router = createBrowserRouter([
+  {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
-        {
-            path: "/",
-            element: <Home/>
-        }
-    ]
-},
-{
-    path: "/registration",
-    element: <RegistrationForm/>
-},
-])
+      { path: "/", element: <Home /> },  // ✅ Home inside App
+      { path: "registration", element: <RegistrationForm /> },  // ✅ Nested under "/"
+      { path: "dashboard", element: <Dashboard /> },  // ✅ Nested under "/"
+    ],
+  },
+]);
 
 export default router;
