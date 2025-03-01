@@ -32,7 +32,7 @@ const Recommendations = () => {
     formData.append("pdf", pdfFile);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze-report", {
+      const response = await fetch("http://35.206.83.91:8000/analyze-report", {
         method: "POST",
         body: formData,
       });
