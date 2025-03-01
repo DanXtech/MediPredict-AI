@@ -45,6 +45,16 @@ const Dashboard = () => {
         {dashboardData.fig_financial && <ChartCard title="Financial Expenses" data={dashboardData.fig_financial} />}
         {dashboardData.fig_cumulative_cost && <ChartCard title="Cumulative Medical Costs" data={dashboardData.fig_cumulative_cost} />}
       </div>
+
+      {/* Button to navigate to recommendations page */}
+      <div className="mt-6 text-center">
+        <button
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+          onClick={() => navigate('/recommendations')} // Navigate to recommendations page
+        >
+          View Recommendations
+        </button>
+      </div>
     </div>
   );
 };

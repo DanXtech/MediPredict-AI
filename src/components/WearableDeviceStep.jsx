@@ -41,28 +41,41 @@ const WearableDeviceStep = ({ formData, setFormData, errors }) => {
     const validateFile = (file) => {
         const allowedTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
         const maxSize = 10 * 1024 * 1024; // 10MB
-
+    
         if (!allowedTypes.includes(file.type)) {
             setFileError("Invalid file type. Only PDF and DOC files are allowed.");
             setUploadedFile(null);
             return;
         }
-
+    
         if (file.size > maxSize) {
             setFileError("File size exceeds 10MB. Please upload a smaller file.");
             setUploadedFile(null);
             return;
         }
-
+    
         setUploadedFile(file);
         setFileError(null);
+    
+        // Update formData with the uploaded file
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            fileUpload: [file]  // Store file in the fileUpload array
+        }));
     };
+    
 
     const removeFile = () => {
         setUploadedFile(null);
         setFileError(null);
+    
+        // Reset the fileUpload field in formData when removing the file
+        setFormData(prevFormData => ({
+            ...prevFormData,
+            fileUpload: []  // Clear the file array in formData
+        }));
     };
-
+    
     return (
         <div className="space-y-6">
             <div className="flex items-center gap-2">

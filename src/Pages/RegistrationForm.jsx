@@ -116,18 +116,18 @@ const RegistrationForm = () => {
         if (!formData.wearableDevice) newErrors.wearableDevice = 'Wearable device status is required';
         if (!formData.deviceType) newErrors.deviceType = 'Device type is required';
         if (!formData.syncHealth) newErrors.syncHealth = 'Sync health status is required';
-        // if (formData.fileUpload.length === 0) {
-        //   newErrors.fileUpload = 'Please upload a file';
-        // } else {
-        //   formData.fileUpload.forEach((file) => {
-        //     if (!['image/png', 'image/jpeg', 'application/pdf'].includes(file.type)) {
-        //       newErrors.fileUpload = 'Only PNG, JPG, and PDF files are allowed';
-        //     }
-        //     if (file.size > 5 * 1024 * 1024) { // 5MB limit
-        //       newErrors.fileUpload = 'File size should not exceed 5MB';
-        //     }
-        //   });
-        // }
+        if (formData.fileUpload.length === 0) {
+          newErrors.fileUpload = 'Please upload a file';
+        } else {
+          formData.fileUpload.forEach((file) => {
+            if (!['image/png', 'image/jpeg', 'application/pdf'].includes(file.type)) {
+              newErrors.fileUpload = 'Only PNG, JPG, and PDF files are allowed';
+            }
+            if (file.size > 5 * 1024 * 1024) { // 5MB limit
+              newErrors.fileUpload = 'File size should not exceed 5MB';
+            }
+          });
+        }
         break;
     }
 

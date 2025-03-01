@@ -4,13 +4,18 @@ import ReactMarkdown from "react-markdown";
 
 const Recommendations = () => {
   const [pdfFile, setPdfFile] = useState(null);
+  const [fileName, setFileName] = useState("No file chosen");
   const [recommendations, setRecommendations] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   // Handle file selection
   const handleFileChange = (event) => {
-    setPdfFile(event.target.files[0]);
+    const file = event.target.files[0];
+    if (file) {
+      setPdfFile(file);
+      setFileName(file.name);
+    }
   };
 
   // Handle form submission
@@ -60,13 +65,26 @@ const Recommendations = () => {
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Upload Your Medical Report and Get Instant Recommendations</h2>
 
       {/* File Upload Input */}
-      <input 
+      {/* Styled File Upload Button */}
+      <div className="relative flex items-center space-x-4 mb-4">
+        <label className="cursor-pointer bg-blue-400 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
+          Choose File
+          <input 
+            type="file" 
+            accept="application/pdf" 
+            onChange={handleFileChange} 
+            className="hidden" 
+          />
+        </label>
+        <span className="text-gray-700">{fileName}</span>
+      </div>
+      {/* <input 
         type="file" 
         accept="application/pdf" 
         onChange={handleFileChange} 
         className="mb-4 border p-2 w-full rounded"
       />
-      
+       */}
       {/* Upload Button */}
       <button 
         onClick={handleUpload} 
