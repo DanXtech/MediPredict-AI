@@ -17,8 +17,11 @@
     "gsap": "^3.12.7",
     "lucide-react": "^0.475.0",
     "motion": "^12.4.3",
+    "plotly.js": "^3.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-markdown": "^10.0.0",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^7.1.5",
     "swiper": "^11.2.4",
     "tailwindcss": "^4.0.6"

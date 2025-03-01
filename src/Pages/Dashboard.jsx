@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; // Ensure correct routing setup
+import { useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 import Plot from "react-plotly.js";
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate(); // Initialize the useNavigate hook
   const formData = location.state?.formData || {}; // ✅ Read form data safely
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/dashboard", {
-      method: "POST", // Change to POST
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData), // Send form data
-    })
+    fetch("http://35.206.83.91:5000/dashboard")
       .then((response) => response.json())
       .then((data) => {
         console.log("API Response:", data); // Debugging
